@@ -21,7 +21,7 @@ app.use(express.static(path.join(path.resolve(), "/public")));
 app.set("view engine", "ejs");
 app.use(cookieParser());
 app.use(cors({
-    origin: "*",
+    origin: process.env.FRONTEND_URL,
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
 }));
