@@ -74,3 +74,17 @@ export const logoutUser = (req, res, next) => {
         next(error)
     }
 }
+
+export const isLogin = (req, res, next) => {
+    try {
+        const { token } = req.cookies;
+
+        if (!token) return next(new ErrorHandler("not logged in", 401))
+
+        res.status(200).json({
+            success: true
+        })
+    } catch (error) {
+        next(error);
+    }
+}
