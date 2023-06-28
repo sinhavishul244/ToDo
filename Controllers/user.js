@@ -88,3 +88,11 @@ export const isLogin = (req, res, next) => {
         next(error);
     }
 }
+
+export const findMyDetails = (req, res, next) => {
+    try {
+        res.status(200).json(req.user);
+    } catch (error) {
+        next(error);
+    }
+}
