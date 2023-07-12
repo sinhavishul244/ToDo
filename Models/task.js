@@ -8,7 +8,7 @@ const schema = new mongoose.Schema({
     description: {
         type: String,
         required: true,
-        maxLength: 30
+        maxLength: 150
     },
     isCompleted: {
         type: Boolean,
